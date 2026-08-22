@@ -15,9 +15,23 @@ using Marshall Rosenberg's Nonviolent Communication (NVC) framework.
 
 ## Repo contents
 
+- `Attune.xcodeproj` / `Attune/` — the SwiftUI iOS app (iOS 17+, Xcode 16+).
+  - `Models/EmotionWheel.swift` — the feeling taxonomy and wheel geometry.
+  - `Models/NVC.swift` — needs per core emotion and the response steps,
+    including the gratitude variant for met needs (Joy, Love).
+  - `Views/WheelScreen.swift` — Canvas-drawn wheel with drag-to-spin and
+    tap-to-select.
+  - `Views/NeedsView.swift`, `Views/RespondView.swift` — the NVC flow.
 - `design/` — working files for the interactive design canvas
   (three iPhone artboards as Design Components, plus `canvas.json` layout).
 - `design/gen-wheel.mjs` — generates `design/Main.dc.html`, including the
   wheel SVG geometry and the full feeling taxonomy.
+
+## Building the app
+
+Open `Attune.xcodeproj` in Xcode 16 or later and run the `Attune` scheme on
+an iOS 17+ simulator or device. The needs mapping is currently per core
+emotion (all Anger-family feelings share one candidate list); per-feeling
+tuning is a natural next step.
 
 "Attune" is a placeholder name.
