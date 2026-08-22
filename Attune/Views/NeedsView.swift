@@ -10,7 +10,8 @@ struct RespondRoute: Hashable {
 struct NeedsView: View {
     let feeling: OuterFeeling
 
-    @State private var selectedNeeds: Set<String> = []
+    /// In pick order — the first selected need leads the NVC sentence.
+    @State private var selectedNeeds: [String] = []
 
     private var core: CoreEmotion { Wheel.core(named: feeling.core) }
     private var met: Bool { NVC.needsAreMet(core: feeling.core) }
@@ -104,9 +105,9 @@ struct NeedsView: View {
         let isSelected = selectedNeeds.contains(need.name)
         return Button {
             if isSelected {
-                selectedNeeds.remove(need.name)
+                selectedNeeds.removeAll { $0 == need.name }
             } else {
-                selectedNeeds.insert(need.name)
+                selectedNeeds.append(need.name)
             }
         } label: {
             VStack(alignment: .leading, spacing: 3) {
@@ -143,7 +144,7 @@ struct NeedsView: View {
     }
 
     private var callToAction: some View {
-        NavigationLink(value: RespondRoute(feeling: feeling, needs: selectedNeeds.sorted())) {
+        NavigationLink(value: RespondRoute(feeling: feeling, needs: selectedNeeds)) {
             HStack {
                 Text(met ? "Express appreciation" : "Craft an NVC response")
                     .font(.system(size: 16, weight: .semibold))

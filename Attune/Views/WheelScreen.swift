@@ -5,7 +5,10 @@ import SwiftUI
 /// and its outer feelings appear as tappable chips below.
 struct WheelScreen: View {
     @State private var rotation: Double = 0
-    @State private var lastDragAngle: Double?
+    /// Anchor of the drag in progress: its fixed start location (to tell
+    /// gestures apart even if a cancellation skips onEnded) and the last
+    /// pointer angle seen.
+    @State private var dragSession: (start: CGPoint, lastAngle: Double)?
     @State private var selected: OuterFeeling?
 
     private var focusedCore: CoreEmotion { Wheel.focusedCore(rotation: rotation) }
@@ -48,8 +51,10 @@ struct WheelScreen: View {
                 )
                 .gesture(
                     DragGesture(minimumDistance: 8)
-                        .onChanged { value in handleDrag(at: value.location, in: geometry.size) }
-                        .onEnded { _ in lastDragAngle = nil }
+                        .onChanged { value in
+                            handleDrag(from: value.startLocation, to: value.location, in: geometry.size)
+                        }
+                        .onEnded { _ in dragSession = nil }
                 )
         }
         .aspectRatio(390.0 / 396.0, contentMode: .fit)
@@ -134,15 +139,15 @@ struct WheelScreen: View {
         return atan2(location.y - center.y, location.x - center.x) * 180 / .pi
     }
 
-    private func handleDrag(at location: CGPoint, in size: CGSize) {
+    private func handleDrag(from start: CGPoint, to location: CGPoint, in size: CGSize) {
         let angle = angle(of: location, in: size)
-        if let last = lastDragAngle {
-            var delta = angle - last
+        if let session = dragSession, session.start == start {
+            var delta = angle - session.lastAngle
             if delta > 180 { delta -= 360 }
             if delta < -180 { delta += 360 }
             rotation += delta
         }
-        lastDragAngle = angle
+        dragSession = (start, angle)
     }
 
     private func handleTap(at location: CGPoint, in size: CGSize) {
@@ -251,10 +256,11 @@ struct WheelCanvas: View {
         context.stroke(path, with: .color(Theme.background), lineWidth: 1.2)
     }
 
-    /// Radial label, flipped on the left half of the wheel so it stays readable.
+    /// Radial label, flipped on the visually-left half of the wheel so it
+    /// stays readable at the current rotation.
     private func drawLabel(in context: inout GraphicsContext, text: String,
                            angle: Double, radius: CGFloat, font: Font, color: Color) {
-        var normalized = angle.truncatingRemainder(dividingBy: 360)
+        var normalized = (angle + rotation).truncatingRemainder(dividingBy: 360)
         if normalized < 0 { normalized += 360 }
         let flipped = normalized > 90 && normalized < 270
         let radians = angle * .pi / 180
