@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap">
+  <style>
+    body { margin: 0; background: #faf7f2; font-family: 'Instrument Sans', system-ui, sans-serif; color: #3a3244; }
+    a { color: #8a5fb0; } a:hover { color: #6d4691; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #faf7f2; display: flex; flex-direction: column; overflow: hidden">
+  <div style="flex: 1 1 0; overflow-y: auto; padding: 56px 24px 8px 24px">
+    <div style="display: flex; align-items: center; gap: 6px; color: #6d6178; font-size: 14px; cursor: pointer; min-height: 44px">
+      <svg width="20" height="20" viewBox="0 0 20 20"><path d="M12.5 4 L7 10 L12.5 16" fill="none" stroke="#3a3244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Wheel</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; margin-top: 6px">
+      <div style="width: 14px; height: 14px; border-radius: 999px; background: #df86dd"></div>
+      <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px">Frustrated</div>
+    </div>
+    <div style="font-size: 12.5px; color: #9a8fa6; margin-top: 4px">Anger &middot; Exasperated &middot; Frustrated</div>
+    <div style="background: #fffdf9; border: 1px solid #e9e1d5; border-radius: 18px; padding: 16px 18px; margin-top: 18px">
+      <div style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 17px">Feelings are messengers.</div>
+      <div style="font-size: 13px; line-height: 1.5; color: #54495f; margin-top: 6px">In Nonviolent Communication, frustration is a signal — a need of yours isn&#39;t being met. Naming the need turns the feeling into something you can act on.</div>
+    </div>
+    <div style="display: flex; align-items: baseline; gap: 8px; margin-top: 22px; margin-bottom: 10px">
+      <span style="font-size: 11px; letter-spacing: 2px; font-weight: 600; color: #6d6178">POSSIBLE UNMET NEEDS</span>
+      <span style="font-size: 12px; color: #9a8fa6">tap all that resonate</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+      <sc-for list="{{needs}}" as="n" hint-placeholder-count="10">
+        <div onClick="{{n.toggle}}" style="border-radius: 16px; padding: 13px 14px; cursor: pointer; {{n.st}}">
+          <div style="font-size: 15px; font-weight: 600">{{n.name}}</div>
+          <div style="font-size: 12px; line-height: 1.4; color: #6d6178; margin-top: 3px">{{n.gloss}}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="font-size: 11px; color: #9a8fa6; text-align: center; margin-top: 18px">Based on Marshall Rosenberg&#39;s Nonviolent Communication</div>
+  </div>
+  <div style="padding: 12px 24px 28px 24px">
+    <div style="background: #332c3e; color: #faf7f2; border-radius: 18px; height: 58px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; font-size: 16px; font-weight: 600; cursor: pointer">
+      <span>Craft an NVC response</span>
+      <span style="font-size: 12px; font-weight: 400; color: #b9aec9">{{countTxt}}</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+const NEEDS = [
+  { name: 'Effectiveness', gloss: 'to see your efforts actually work' },
+  { name: 'Progress', gloss: 'movement toward what matters' },
+  { name: 'Competence', gloss: 'trust in your own ability' },
+  { name: 'Ease', gloss: 'for things to flow without struggle' },
+  { name: 'Clarity', gloss: 'to know what is expected' },
+  { name: 'Support', gloss: 'help carrying the load' },
+  { name: 'Cooperation', gloss: 'working with, not against' },
+  { name: 'Autonomy', gloss: 'choice over how you do things' },
+  { name: 'To be heard', gloss: 'your input landing with others' },
+  { name: 'Consideration', gloss: 'your time and effort respected' }
+];
+
+class Component extends DCLogic {
+  sel() {
+    const s = this.state || {};
+    return s.sel === undefined ? { 'Effectiveness': true } : s.sel;
+  }
+  renderVals() {
+    const self = this;
+    const sel = this.sel();
+    const count = NEEDS.filter(function (n) { return sel[n.name]; }).length;
+    return {
+      countTxt: count === 1 ? '1 need' : count + ' needs',
+      needs: NEEDS.map(function (n) {
+        const on = !!sel[n.name];
+        return {
+          name: n.name,
+          gloss: n.gloss,
+          st: on
+            ? 'background:#f6d7f5;border:1.5px solid #3a3244'
+            : 'background:#fffdf9;border:1.5px solid #e9e1d5',
+          toggle: function () {
+            const next = {};
+            for (const k in sel) next[k] = sel[k];
+            next[n.name] = !next[n.name];
+            self.setState({ sel: next });
+          }
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

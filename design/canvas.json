@@ -1,0 +1,12 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 844 },
+    { "file": "Needs.dc.html", "x": 520, "y": 0, "w": 390, "h": 844 },
+    { "file": "Respond.dc.html", "x": 1040, "y": 0, "w": 390, "h": 844 }
+  ],
+  "annotations": [
+    { "id": "flow", "x": 0, "y": -200, "w": 430, "text": "Flow: spin the wheel → tap an outer feeling (e.g. Frustrated) → see the needs that may be unmet (NVC) → craft a response.\nThe wheel drags to spin, chips and tabs are tappable in this prototype; navigation between the three screens isn't wired." },
+    { "id": "assumptions", "x": 1040, "y": -200, "w": 430, "text": "Assumptions: working title \"Attune\" (placeholder). Feeling taxonomy adapted from the classic feelings wheel; needs list and the 4-step response from Marshall Rosenberg's NVC. Sample path shown: Frustrated → Effectiveness." }
+  ],
+  "launch": { "view": "canvas" }
+}

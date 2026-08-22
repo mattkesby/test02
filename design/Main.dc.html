@@ -1,0 +1,344 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap">
+  <style>
+    body { margin: 0; background: #faf7f2; font-family: 'Instrument Sans', system-ui, sans-serif; color: #3a3244; }
+    a { color: #8a5fb0; } a:hover { color: #6d4691; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #faf7f2; display: flex; flex-direction: column; overflow: hidden">
+  <div style="padding: 56px 24px 2px 24px">
+    <div style="font-size: 11px; letter-spacing: 3px; font-weight: 600; color: #9a8fa6">ATTUNE</div>
+    <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 25px; margin-top: 4px">How are you feeling?</div>
+  </div>
+  <svg width="390" height="396" viewBox="0 0 390 396" onPointerDown="{{down}}" onPointerMove="{{move}}" onPointerUp="{{up}}" onPointerLeave="{{up}}" onClick="{{tap}}" style="touch-action: none; cursor: grab; display: block; font-family: 'Instrument Sans', system-ui, sans-serif; filter: drop-shadow(0 10px 24px rgba(70, 48, 92, 0.14))">
+    <g transform="{{gt}}">
+      <path d="M 146.86 173.32 A 108 108 0 0 1 243.14 173.32 L 217.29 225.24 A 50 50 0 0 0 172.71 225.24 Z" fill="#df86dd" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 118.33 116.03 A 172 172 0 0 1 147.93 104.57 L 165.44 166.12 A 108 108 0 0 0 146.86 173.32 Z" fill="#ecaeea" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 84.46 48.00 A 248 248 0 0 1 105.41 38.75 L 132.87 109.61 A 172 172 0 0 0 118.33 116.03 Z" fill="#f6d7f5" stroke="#faf7f2" stroke-width="1.2" data-f="Anger/Hate" style="cursor:pointer"/>
+      <text x="110.18" y="77.89" transform="rotate(66.18 110.18 77.89)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Anger/Hate" style="cursor:pointer">Hate</text>
+      <path d="M 105.41 38.75 A 248 248 0 0 1 127.13 31.47 L 147.93 104.57 A 172 172 0 0 0 132.87 109.61 Z" fill="#f6d7f5" stroke="#faf7f2" stroke-width="1.2" data-f="Anger/Hostile" style="cursor:pointer"/>
+      <text x="128.26" y="70.89" transform="rotate(71.47 128.26 70.89)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Anger/Hostile" style="cursor:pointer">Hostile</text>
+      <text x="144.43" y="139.45" transform="rotate(68.82 144.43 139.45)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Rage</text>
+      <path d="M 147.93 104.57 A 172 172 0 0 1 179.13 98.73 L 185.04 162.46 A 108 108 0 0 0 165.44 166.12 Z" fill="#ecaeea" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 127.13 31.47 A 248 248 0 0 1 149.43 26.22 L 163.40 100.93 A 172 172 0 0 0 147.93 104.57 Z" fill="#f6d7f5" stroke="#faf7f2" stroke-width="1.2" data-f="Anger/Agitated" style="cursor:pointer"/>
+      <text x="146.92" y="65.58" transform="rotate(76.76 146.92 65.58)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Anger/Agitated" style="cursor:pointer">Agitated</text>
+      <path d="M 149.43 26.22 A 248 248 0 0 1 172.12 23.06 L 179.13 98.73 A 172 172 0 0 0 163.40 100.93 Z" fill="#f6d7f5" stroke="#faf7f2" stroke-width="1.2" data-f="Anger/Frustrated" style="cursor:pointer"/>
+      <text x="165.99" y="62.01" transform="rotate(82.06 165.99 62.01)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Anger/Frustrated" style="cursor:pointer">Frustrated</text>
+      <text x="169.28" y="132.38" transform="rotate(79.41 169.28 132.38)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Exasperated</text>
+      <path d="M 179.13 98.73 A 172 172 0 0 1 210.87 98.73 L 204.96 162.46 A 108 108 0 0 0 185.04 162.46 Z" fill="#ecaeea" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 172.12 23.06 A 248 248 0 0 1 195.00 22.00 L 195.00 98.00 A 172 172 0 0 0 179.13 98.73 Z" fill="#f6d7f5" stroke="#faf7f2" stroke-width="1.2" data-f="Anger/Annoyed" style="cursor:pointer"/>
+      <text x="185.30" y="60.22" transform="rotate(87.35 185.30 60.22)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Anger/Annoyed" style="cursor:pointer">Annoyed</text>
+      <path d="M 195.00 22.00 A 248 248 0 0 1 217.88 23.06 L 210.87 98.73 A 172 172 0 0 0 195.00 98.00 Z" fill="#f6d7f5" stroke="#faf7f2" stroke-width="1.2" data-f="Anger/Aggravated" style="cursor:pointer"/>
+      <text x="204.70" y="60.22" transform="rotate(-87.35 204.70 60.22)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Anger/Aggravated" style="cursor:pointer">Aggravated</text>
+      <text x="195.00" y="130.00" transform="rotate(-90.00 195.00 130.00)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Irritable</text>
+      <path d="M 210.87 98.73 A 172 172 0 0 1 242.07 104.57 L 224.56 166.12 A 108 108 0 0 0 204.96 162.46 Z" fill="#ecaeea" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 217.88 23.06 A 248 248 0 0 1 240.57 26.22 L 226.60 100.93 A 172 172 0 0 0 210.87 98.73 Z" fill="#f6d7f5" stroke="#faf7f2" stroke-width="1.2" data-f="Anger/Resentful" style="cursor:pointer"/>
+      <text x="224.01" y="62.01" transform="rotate(-82.06 224.01 62.01)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Anger/Resentful" style="cursor:pointer">Resentful</text>
+      <path d="M 240.57 26.22 A 248 248 0 0 1 262.87 31.47 L 242.07 104.57 A 172 172 0 0 0 226.60 100.93 Z" fill="#f6d7f5" stroke="#faf7f2" stroke-width="1.2" data-f="Anger/Jealous" style="cursor:pointer"/>
+      <text x="243.08" y="65.58" transform="rotate(-76.76 243.08 65.58)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Anger/Jealous" style="cursor:pointer">Jealous</text>
+      <text x="220.72" y="132.38" transform="rotate(-79.41 220.72 132.38)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Envy</text>
+      <path d="M 242.07 104.57 A 172 172 0 0 1 271.67 116.03 L 243.14 173.32 A 108 108 0 0 0 224.56 166.12 Z" fill="#ecaeea" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 262.87 31.47 A 248 248 0 0 1 284.59 38.75 L 257.13 109.61 A 172 172 0 0 0 242.07 104.57 Z" fill="#f6d7f5" stroke="#faf7f2" stroke-width="1.2" data-f="Anger/Contempt" style="cursor:pointer"/>
+      <text x="261.74" y="70.89" transform="rotate(-71.47 261.74 70.89)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Anger/Contempt" style="cursor:pointer">Contempt</text>
+      <path d="M 284.59 38.75 A 248 248 0 0 1 305.54 48.00 L 271.67 116.03 A 172 172 0 0 0 257.13 109.61 Z" fill="#f6d7f5" stroke="#faf7f2" stroke-width="1.2" data-f="Anger/Revolted" style="cursor:pointer"/>
+      <text x="279.82" y="77.89" transform="rotate(-66.18 279.82 77.89)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Anger/Revolted" style="cursor:pointer">Revolted</text>
+      <text x="245.57" y="139.45" transform="rotate(-68.82 245.57 139.45)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Disgust</text>
+      <text x="195.00" y="191.00" transform="rotate(-90.00 195.00 191.00)" text-anchor="middle" dominant-baseline="middle" font-size="14.5" fill="#3a3244" font-family="Instrument Serif, Georgia, serif" font-style="italic">Anger</text>
+      <path d="M 243.14 173.32 A 108 108 0 0 1 303.00 270.00 L 245.00 270.00 A 50 50 0 0 0 217.29 225.24 Z" fill="#9fa9e6" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 271.67 116.03 A 172 172 0 0 1 298.65 132.74 L 260.08 183.81 A 108 108 0 0 0 243.14 173.32 Z" fill="#bfc6ef" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 305.54 48.00 A 248 248 0 0 1 325.56 59.15 L 285.55 123.76 A 172 172 0 0 0 271.67 116.03 Z" fill="#e0e3f8" stroke="#faf7f2" stroke-width="1.2" data-f="Sadness/Agony" style="cursor:pointer"/>
+      <text x="297.19" y="86.54" transform="rotate(-60.88 297.19 86.54)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Sadness/Agony" style="cursor:pointer">Agony</text>
+      <path d="M 325.56 59.15 A 248 248 0 0 1 344.45 72.09 L 298.65 132.74 A 172 172 0 0 0 285.55 123.76 Z" fill="#e0e3f8" stroke="#faf7f2" stroke-width="1.2" data-f="Sadness/Hurt" style="cursor:pointer"/>
+      <text x="313.68" y="96.75" transform="rotate(-55.59 313.68 96.75)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Sadness/Hurt" style="cursor:pointer">Hurt</text>
+      <text x="268.70" y="150.97" transform="rotate(-58.24 268.70 150.97)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Suffering</text>
+      <path d="M 298.65 132.74 A 172 172 0 0 1 322.11 154.12 L 274.81 197.24 A 108 108 0 0 0 260.08 183.81 Z" fill="#bfc6ef" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 344.45 72.09 A 248 248 0 0 1 362.08 86.73 L 310.88 142.89 A 172 172 0 0 0 298.65 132.74 Z" fill="#e0e3f8" stroke="#faf7f2" stroke-width="1.2" data-f="Sadness/Depressed" style="cursor:pointer"/>
+      <text x="329.16" y="108.44" transform="rotate(-50.29 329.16 108.44)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Sadness/Depressed" style="cursor:pointer">Depressed</text>
+      <path d="M 362.08 86.73 A 248 248 0 0 1 378.27 102.92 L 322.11 154.12 A 172 172 0 0 0 310.88 142.89 Z" fill="#e0e3f8" stroke="#faf7f2" stroke-width="1.2" data-f="Sadness/Sorrow" style="cursor:pointer"/>
+      <text x="343.49" y="121.51" transform="rotate(-45.00 343.49 121.51)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Sadness/Sorrow" style="cursor:pointer">Sorrow</text>
+      <text x="289.32" y="166.54" transform="rotate(-47.65 289.32 166.54)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Sadness</text>
+      <path d="M 322.11 154.12 A 172 172 0 0 1 341.24 179.45 L 286.82 213.15 A 108 108 0 0 0 274.81 197.24 Z" fill="#bfc6ef" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 378.27 102.92 A 248 248 0 0 1 392.91 120.55 L 332.26 166.35 A 172 172 0 0 0 322.11 154.12 Z" fill="#e0e3f8" stroke="#faf7f2" stroke-width="1.2" data-f="Sadness/Dismayed" style="cursor:pointer"/>
+      <text x="356.56" y="135.84" transform="rotate(-39.71 356.56 135.84)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Sadness/Dismayed" style="cursor:pointer">Dismayed</text>
+      <path d="M 392.91 120.55 A 248 248 0 0 1 405.85 139.44 L 341.24 179.45 A 172 172 0 0 0 332.26 166.35 Z" fill="#e0e3f8" stroke="#faf7f2" stroke-width="1.2" data-f="Sadness/Displeased" style="cursor:pointer"/>
+      <text x="368.25" y="151.32" transform="rotate(-34.41 368.25 151.32)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Sadness/Displeased" style="cursor:pointer">Displeased</text>
+      <text x="306.72" y="185.63" transform="rotate(-37.06 306.72 185.63)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Disappointed</text>
+      <path d="M 341.24 179.45 A 172 172 0 0 1 355.39 207.87 L 295.71 230.99 A 108 108 0 0 0 286.82 213.15 Z" fill="#bfc6ef" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 405.85 139.44 A 248 248 0 0 1 417.00 159.46 L 348.97 193.33 A 172 172 0 0 0 341.24 179.45 Z" fill="#e0e3f8" stroke="#faf7f2" stroke-width="1.2" data-f="Sadness/Regretful" style="cursor:pointer"/>
+      <text x="378.46" y="167.81" transform="rotate(-29.12 378.46 167.81)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Sadness/Regretful" style="cursor:pointer">Regretful</text>
+      <path d="M 417.00 159.46 A 248 248 0 0 1 426.25 180.41 L 355.39 207.87 A 172 172 0 0 0 348.97 193.33 Z" fill="#e0e3f8" stroke="#faf7f2" stroke-width="1.2" data-f="Sadness/Guilty" style="cursor:pointer"/>
+      <text x="387.11" y="185.18" transform="rotate(-23.82 387.11 185.18)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Sadness/Guilty" style="cursor:pointer">Guilty</text>
+      <text x="320.32" y="207.60" transform="rotate(-26.47 320.32 207.60)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Shameful</text>
+      <path d="M 355.39 207.87 A 172 172 0 0 1 364.07 238.40 L 301.16 250.16 A 108 108 0 0 0 295.71 230.99 Z" fill="#bfc6ef" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 426.25 180.41 A 248 248 0 0 1 433.53 202.13 L 360.43 222.93 A 172 172 0 0 0 355.39 207.87 Z" fill="#e0e3f8" stroke="#faf7f2" stroke-width="1.2" data-f="Sadness/Isolated" style="cursor:pointer"/>
+      <text x="394.11" y="203.26" transform="rotate(-18.53 394.11 203.26)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Sadness/Isolated" style="cursor:pointer">Isolated</text>
+      <path d="M 433.53 202.13 A 248 248 0 0 1 438.78 224.43 L 364.07 238.40 A 172 172 0 0 0 360.43 222.93 Z" fill="#e0e3f8" stroke="#faf7f2" stroke-width="1.2" data-f="Sadness/Lonely" style="cursor:pointer"/>
+      <text x="399.42" y="221.92" transform="rotate(-13.24 399.42 221.92)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Sadness/Lonely" style="cursor:pointer">Lonely</text>
+      <text x="329.66" y="231.69" transform="rotate(-15.88 329.66 231.69)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Neglected</text>
+      <path d="M 364.07 238.40 A 172 172 0 0 1 367.00 270.00 L 303.00 270.00 A 108 108 0 0 0 301.16 250.16 Z" fill="#bfc6ef" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 438.78 224.43 A 248 248 0 0 1 441.94 247.12 L 366.27 254.13 A 172 172 0 0 0 364.07 238.40 Z" fill="#e0e3f8" stroke="#faf7f2" stroke-width="1.2" data-f="Sadness/Grief" style="cursor:pointer"/>
+      <text x="402.99" y="240.99" transform="rotate(-7.94 402.99 240.99)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Sadness/Grief" style="cursor:pointer">Grief</text>
+      <path d="M 441.94 247.12 A 248 248 0 0 1 443.00 270.00 L 367.00 270.00 A 172 172 0 0 0 366.27 254.13 Z" fill="#e0e3f8" stroke="#faf7f2" stroke-width="1.2" data-f="Sadness/Powerless" style="cursor:pointer"/>
+      <text x="404.78" y="260.30" transform="rotate(-2.65 404.78 260.30)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Sadness/Powerless" style="cursor:pointer">Powerless</text>
+      <text x="334.40" y="257.08" transform="rotate(-5.29 334.40 257.08)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Despair</text>
+      <text x="262.17" y="228.41" transform="rotate(-31.76 262.17 228.41)" text-anchor="middle" dominant-baseline="middle" font-size="14.5" fill="#3a3244" font-family="Instrument Serif, Georgia, serif" font-style="italic">Sadness</text>
+      <path d="M 303.00 270.00 A 108 108 0 0 1 260.08 356.19 L 225.13 309.90 A 50 50 0 0 0 245.00 270.00 Z" fill="#7fdcc0" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 367.00 270.00 A 172 172 0 0 1 364.07 301.60 L 301.16 289.84 A 108 108 0 0 0 303.00 270.00 Z" fill="#a8e8d4" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 443.00 270.00 A 248 248 0 0 1 441.94 292.88 L 366.27 285.87 A 172 172 0 0 0 367.00 270.00 Z" fill="#d6f4ea" stroke="#faf7f2" stroke-width="1.2" data-f="Surprise/Shocked" style="cursor:pointer"/>
+      <text x="404.78" y="279.70" transform="rotate(2.65 404.78 279.70)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Surprise/Shocked" style="cursor:pointer">Shocked</text>
+      <path d="M 441.94 292.88 A 248 248 0 0 1 438.78 315.57 L 364.07 301.60 A 172 172 0 0 0 366.27 285.87 Z" fill="#d6f4ea" stroke="#faf7f2" stroke-width="1.2" data-f="Surprise/Dismayed" style="cursor:pointer"/>
+      <text x="402.99" y="299.01" transform="rotate(7.94 402.99 299.01)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Surprise/Dismayed" style="cursor:pointer">Dismayed</text>
+      <text x="334.40" y="282.92" transform="rotate(5.29 334.40 282.92)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Stunned</text>
+      <path d="M 364.07 301.60 A 172 172 0 0 1 355.39 332.13 L 295.71 309.01 A 108 108 0 0 0 301.16 289.84 Z" fill="#a8e8d4" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 438.78 315.57 A 248 248 0 0 1 433.53 337.87 L 360.43 317.07 A 172 172 0 0 0 364.07 301.60 Z" fill="#d6f4ea" stroke="#faf7f2" stroke-width="1.2" data-f="Surprise/Disillusioned" style="cursor:pointer"/>
+      <text x="399.42" y="318.08" transform="rotate(13.24 399.42 318.08)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Surprise/Disillusioned" style="cursor:pointer">Disillusioned</text>
+      <path d="M 433.53 337.87 A 248 248 0 0 1 426.25 359.59 L 355.39 332.13 A 172 172 0 0 0 360.43 317.07 Z" fill="#d6f4ea" stroke="#faf7f2" stroke-width="1.2" data-f="Surprise/Perplexed" style="cursor:pointer"/>
+      <text x="394.11" y="336.74" transform="rotate(18.53 394.11 336.74)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Surprise/Perplexed" style="cursor:pointer">Perplexed</text>
+      <text x="329.66" y="308.31" transform="rotate(15.88 329.66 308.31)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Confused</text>
+      <path d="M 355.39 332.13 A 172 172 0 0 1 341.24 360.55 L 286.82 326.85 A 108 108 0 0 0 295.71 309.01 Z" fill="#a8e8d4" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 426.25 359.59 A 248 248 0 0 1 417.00 380.54 L 348.97 346.67 A 172 172 0 0 0 355.39 332.13 Z" fill="#d6f4ea" stroke="#faf7f2" stroke-width="1.2" data-f="Surprise/Astonished" style="cursor:pointer"/>
+      <text x="387.11" y="354.82" transform="rotate(23.82 387.11 354.82)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Surprise/Astonished" style="cursor:pointer">Astonished</text>
+      <path d="M 417.00 380.54 A 248 248 0 0 1 405.85 400.56 L 341.24 360.55 A 172 172 0 0 0 348.97 346.67 Z" fill="#d6f4ea" stroke="#faf7f2" stroke-width="1.2" data-f="Surprise/Awe-struck" style="cursor:pointer"/>
+      <text x="378.46" y="372.19" transform="rotate(29.12 378.46 372.19)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Surprise/Awe-struck" style="cursor:pointer">Awe-struck</text>
+      <text x="320.32" y="332.40" transform="rotate(26.47 320.32 332.40)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Amazed</text>
+      <path d="M 341.24 360.55 A 172 172 0 0 1 322.11 385.88 L 274.81 342.76 A 108 108 0 0 0 286.82 326.85 Z" fill="#a8e8d4" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 405.85 400.56 A 248 248 0 0 1 392.91 419.45 L 332.26 373.65 A 172 172 0 0 0 341.24 360.55 Z" fill="#d6f4ea" stroke="#faf7f2" stroke-width="1.2" data-f="Surprise/Speechless" style="cursor:pointer"/>
+      <text x="368.25" y="388.68" transform="rotate(34.41 368.25 388.68)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Surprise/Speechless" style="cursor:pointer">Speechless</text>
+      <path d="M 392.91 419.45 A 248 248 0 0 1 378.27 437.08 L 322.11 385.88 A 172 172 0 0 0 332.26 373.65 Z" fill="#d6f4ea" stroke="#faf7f2" stroke-width="1.2" data-f="Surprise/Astounded" style="cursor:pointer"/>
+      <text x="356.56" y="404.16" transform="rotate(39.71 356.56 404.16)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Surprise/Astounded" style="cursor:pointer">Astounded</text>
+      <text x="306.72" y="354.37" transform="rotate(37.06 306.72 354.37)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Overcome</text>
+      <path d="M 322.11 385.88 A 172 172 0 0 1 298.65 407.26 L 260.08 356.19 A 108 108 0 0 0 274.81 342.76 Z" fill="#a8e8d4" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 378.27 437.08 A 248 248 0 0 1 362.08 453.27 L 310.88 397.11 A 172 172 0 0 0 322.11 385.88 Z" fill="#d6f4ea" stroke="#faf7f2" stroke-width="1.2" data-f="Surprise/Stimulated" style="cursor:pointer"/>
+      <text x="343.49" y="418.49" transform="rotate(45.00 343.49 418.49)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Surprise/Stimulated" style="cursor:pointer">Stimulated</text>
+      <path d="M 362.08 453.27 A 248 248 0 0 1 344.45 467.91 L 298.65 407.26 A 172 172 0 0 0 310.88 397.11 Z" fill="#d6f4ea" stroke="#faf7f2" stroke-width="1.2" data-f="Surprise/Touched" style="cursor:pointer"/>
+      <text x="329.16" y="431.56" transform="rotate(50.29 329.16 431.56)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Surprise/Touched" style="cursor:pointer">Touched</text>
+      <text x="289.32" y="373.46" transform="rotate(47.65 289.32 373.46)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Moved</text>
+      <text x="265.72" y="305.21" transform="rotate(26.47 265.72 305.21)" text-anchor="middle" dominant-baseline="middle" font-size="14.5" fill="#3a3244" font-family="Instrument Serif, Georgia, serif" font-style="italic">Surprise</text>
+      <path d="M 260.08 356.19 A 108 108 0 0 1 115.19 342.76 L 158.05 303.68 A 50 50 0 0 0 225.13 309.90 Z" fill="#a8d97a" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 298.65 407.26 A 172 172 0 0 1 271.67 423.97 L 243.14 366.68 A 108 108 0 0 0 260.08 356.19 Z" fill="#c6e6a2" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 344.45 467.91 A 248 248 0 0 1 325.56 480.85 L 285.55 416.24 A 172 172 0 0 0 298.65 407.26 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Pleased" style="cursor:pointer"/>
+      <text x="313.68" y="443.25" transform="rotate(55.59 313.68 443.25)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Pleased" style="cursor:pointer">Pleased</text>
+      <path d="M 325.56 480.85 A 248 248 0 0 1 305.54 492.00 L 271.67 423.97 A 172 172 0 0 0 285.55 416.24 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Satisfied" style="cursor:pointer"/>
+      <text x="297.19" y="453.46" transform="rotate(60.88 297.19 453.46)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Satisfied" style="cursor:pointer">Satisfied</text>
+      <text x="268.70" y="389.03" transform="rotate(58.24 268.70 389.03)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Content</text>
+      <path d="M 271.67 423.97 A 172 172 0 0 1 242.07 435.43 L 224.56 373.88 A 108 108 0 0 0 243.14 366.68 Z" fill="#c6e6a2" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 305.54 492.00 A 248 248 0 0 1 284.59 501.25 L 257.13 430.39 A 172 172 0 0 0 271.67 423.97 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Amused" style="cursor:pointer"/>
+      <text x="279.82" y="462.11" transform="rotate(66.18 279.82 462.11)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Amused" style="cursor:pointer">Amused</text>
+      <path d="M 284.59 501.25 A 248 248 0 0 1 262.87 508.53 L 242.07 435.43 A 172 172 0 0 0 257.13 430.39 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Delighted" style="cursor:pointer"/>
+      <text x="261.74" y="469.11" transform="rotate(71.47 261.74 469.11)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Delighted" style="cursor:pointer">Delighted</text>
+      <text x="245.57" y="400.55" transform="rotate(68.82 245.57 400.55)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Happy</text>
+      <path d="M 242.07 435.43 A 172 172 0 0 1 210.87 441.27 L 204.96 377.54 A 108 108 0 0 0 224.56 373.88 Z" fill="#c6e6a2" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 262.87 508.53 A 248 248 0 0 1 240.57 513.78 L 226.60 439.07 A 172 172 0 0 0 242.07 435.43 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Jovial" style="cursor:pointer"/>
+      <text x="243.08" y="474.42" transform="rotate(76.76 243.08 474.42)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Jovial" style="cursor:pointer">Jovial</text>
+      <path d="M 240.57 513.78 A 248 248 0 0 1 217.88 516.94 L 210.87 441.27 A 172 172 0 0 0 226.60 439.07 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Blissful" style="cursor:pointer"/>
+      <text x="224.01" y="477.99" transform="rotate(82.06 224.01 477.99)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Blissful" style="cursor:pointer">Blissful</text>
+      <text x="220.72" y="407.62" transform="rotate(79.41 220.72 407.62)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Cheerful</text>
+      <path d="M 210.87 441.27 A 172 172 0 0 1 179.13 441.27 L 185.04 377.54 A 108 108 0 0 0 204.96 377.54 Z" fill="#c6e6a2" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 217.88 516.94 A 248 248 0 0 1 195.00 518.00 L 195.00 442.00 A 172 172 0 0 0 210.87 441.27 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Triumphant" style="cursor:pointer"/>
+      <text x="204.70" y="479.78" transform="rotate(87.35 204.70 479.78)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Triumphant" style="cursor:pointer">Triumphant</text>
+      <path d="M 195.00 518.00 A 248 248 0 0 1 172.12 516.94 L 179.13 441.27 A 172 172 0 0 0 195.00 442.00 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Illustrious" style="cursor:pointer"/>
+      <text x="185.30" y="479.78" transform="rotate(272.65 185.30 479.78)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Illustrious" style="cursor:pointer">Illustrious</text>
+      <text x="195.00" y="410.00" transform="rotate(90.00 195.00 410.00)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Proud</text>
+      <path d="M 179.13 441.27 A 172 172 0 0 1 147.93 435.43 L 165.44 373.88 A 108 108 0 0 0 185.04 377.54 Z" fill="#c6e6a2" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 172.12 516.94 A 248 248 0 0 1 149.43 513.78 L 163.40 439.07 A 172 172 0 0 0 179.13 441.27 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Eager" style="cursor:pointer"/>
+      <text x="165.99" y="477.99" transform="rotate(277.94 165.99 477.99)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Eager" style="cursor:pointer">Eager</text>
+      <path d="M 149.43 513.78 A 248 248 0 0 1 127.13 508.53 L 147.93 435.43 A 172 172 0 0 0 163.40 439.07 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Hopeful" style="cursor:pointer"/>
+      <text x="146.92" y="474.42" transform="rotate(283.24 146.92 474.42)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Hopeful" style="cursor:pointer">Hopeful</text>
+      <text x="169.28" y="407.62" transform="rotate(280.59 169.28 407.62)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Optimistic</text>
+      <path d="M 147.93 435.43 A 172 172 0 0 1 118.33 423.97 L 146.86 366.68 A 108 108 0 0 0 165.44 373.88 Z" fill="#c6e6a2" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 127.13 508.53 A 248 248 0 0 1 105.41 501.25 L 132.87 430.39 A 172 172 0 0 0 147.93 435.43 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Excited" style="cursor:pointer"/>
+      <text x="128.26" y="469.11" transform="rotate(288.53 128.26 469.11)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Excited" style="cursor:pointer">Excited</text>
+      <path d="M 105.41 501.25 A 248 248 0 0 1 84.46 492.00 L 118.33 423.97 A 172 172 0 0 0 132.87 430.39 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Zeal" style="cursor:pointer"/>
+      <text x="110.18" y="462.11" transform="rotate(293.82 110.18 462.11)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Zeal" style="cursor:pointer">Zeal</text>
+      <text x="144.43" y="400.55" transform="rotate(291.18 144.43 400.55)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Enthusiastic</text>
+      <path d="M 118.33 423.97 A 172 172 0 0 1 91.35 407.26 L 129.92 356.19 A 108 108 0 0 0 146.86 366.68 Z" fill="#c6e6a2" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 84.46 492.00 A 248 248 0 0 1 64.44 480.85 L 104.45 416.24 A 172 172 0 0 0 118.33 423.97 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Euphoric" style="cursor:pointer"/>
+      <text x="92.81" y="453.46" transform="rotate(299.12 92.81 453.46)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Euphoric" style="cursor:pointer">Euphoric</text>
+      <path d="M 64.44 480.85 A 248 248 0 0 1 45.55 467.91 L 91.35 407.26 A 172 172 0 0 0 104.45 416.24 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Jubilation" style="cursor:pointer"/>
+      <text x="76.32" y="443.25" transform="rotate(304.41 76.32 443.25)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Jubilation" style="cursor:pointer">Jubilation</text>
+      <text x="121.30" y="389.03" transform="rotate(301.76 121.30 389.03)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Elation</text>
+      <path d="M 91.35 407.26 A 172 172 0 0 1 67.89 385.88 L 115.19 342.76 A 108 108 0 0 0 129.92 356.19 Z" fill="#c6e6a2" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 45.55 467.91 A 248 248 0 0 1 27.92 453.27 L 79.12 397.11 A 172 172 0 0 0 91.35 407.26 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Enchanted" style="cursor:pointer"/>
+      <text x="60.84" y="431.56" transform="rotate(309.71 60.84 431.56)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Enchanted" style="cursor:pointer">Enchanted</text>
+      <path d="M 27.92 453.27 A 248 248 0 0 1 11.73 437.08 L 67.89 385.88 A 172 172 0 0 0 79.12 397.11 Z" fill="#e4f3d2" stroke="#faf7f2" stroke-width="1.2" data-f="Joy/Rapture" style="cursor:pointer"/>
+      <text x="46.51" y="418.49" transform="rotate(315.00 46.51 418.49)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Joy/Rapture" style="cursor:pointer">Rapture</text>
+      <text x="100.68" y="373.46" transform="rotate(312.35 100.68 373.46)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Enthralled</text>
+      <text x="187.71" y="348.66" transform="rotate(275.29 187.71 348.66)" text-anchor="middle" dominant-baseline="middle" font-size="14.5" fill="#3a3244" font-family="Instrument Serif, Georgia, serif" font-style="italic">Joy</text>
+      <path d="M 115.19 342.76 A 108 108 0 0 1 88.84 250.16 L 145.85 260.81 A 50 50 0 0 0 158.05 303.68 Z" fill="#e9d377" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 67.89 385.88 A 172 172 0 0 1 48.76 360.55 L 103.18 326.85 A 108 108 0 0 0 115.19 342.76 Z" fill="#f1e4a4" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 11.73 437.08 A 248 248 0 0 1 -2.91 419.45 L 57.74 373.65 A 172 172 0 0 0 67.89 385.88 Z" fill="#f9f2d4" stroke="#faf7f2" stroke-width="1.2" data-f="Love/Romantic" style="cursor:pointer"/>
+      <text x="33.44" y="404.16" transform="rotate(320.29 33.44 404.16)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Love/Romantic" style="cursor:pointer">Romantic</text>
+      <path d="M -2.91 419.45 A 248 248 0 0 1 -15.85 400.56 L 48.76 360.55 A 172 172 0 0 0 57.74 373.65 Z" fill="#f9f2d4" stroke="#faf7f2" stroke-width="1.2" data-f="Love/Fondness" style="cursor:pointer"/>
+      <text x="21.75" y="388.68" transform="rotate(325.59 21.75 388.68)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Love/Fondness" style="cursor:pointer">Fondness</text>
+      <text x="83.28" y="354.37" transform="rotate(322.94 83.28 354.37)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Affectionate</text>
+      <path d="M 48.76 360.55 A 172 172 0 0 1 34.61 332.13 L 94.29 309.01 A 108 108 0 0 0 103.18 326.85 Z" fill="#f1e4a4" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M -15.85 400.56 A 248 248 0 0 1 -27.00 380.54 L 41.03 346.67 A 172 172 0 0 0 48.76 360.55 Z" fill="#f9f2d4" stroke="#faf7f2" stroke-width="1.2" data-f="Love/Sentimental" style="cursor:pointer"/>
+      <text x="11.54" y="372.19" transform="rotate(330.88 11.54 372.19)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Love/Sentimental" style="cursor:pointer">Sentimental</text>
+      <path d="M -27.00 380.54 A 248 248 0 0 1 -36.25 359.59 L 34.61 332.13 A 172 172 0 0 0 41.03 346.67 Z" fill="#f9f2d4" stroke="#faf7f2" stroke-width="1.2" data-f="Love/Attracted" style="cursor:pointer"/>
+      <text x="2.89" y="354.82" transform="rotate(336.18 2.89 354.82)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Love/Attracted" style="cursor:pointer">Attracted</text>
+      <text x="69.68" y="332.40" transform="rotate(333.53 69.68 332.40)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Longing</text>
+      <path d="M 34.61 332.13 A 172 172 0 0 1 25.93 301.60 L 88.84 289.84 A 108 108 0 0 0 94.29 309.01 Z" fill="#f1e4a4" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M -36.25 359.59 A 248 248 0 0 1 -43.53 337.87 L 29.57 317.07 A 172 172 0 0 0 34.61 332.13 Z" fill="#f9f2d4" stroke="#faf7f2" stroke-width="1.2" data-f="Love/Passion" style="cursor:pointer"/>
+      <text x="-4.11" y="336.74" transform="rotate(341.47 -4.11 336.74)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Love/Passion" style="cursor:pointer">Passion</text>
+      <path d="M -43.53 337.87 A 248 248 0 0 1 -48.78 315.57 L 25.93 301.60 A 172 172 0 0 0 29.57 317.07 Z" fill="#f9f2d4" stroke="#faf7f2" stroke-width="1.2" data-f="Love/Infatuation" style="cursor:pointer"/>
+      <text x="-9.42" y="318.08" transform="rotate(346.76 -9.42 318.08)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Love/Infatuation" style="cursor:pointer">Infatuation</text>
+      <text x="60.34" y="308.31" transform="rotate(344.12 60.34 308.31)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Desire</text>
+      <path d="M 25.93 301.60 A 172 172 0 0 1 23.00 270.00 L 87.00 270.00 A 108 108 0 0 0 88.84 289.84 Z" fill="#f1e4a4" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M -48.78 315.57 A 248 248 0 0 1 -51.94 292.88 L 23.73 285.87 A 172 172 0 0 0 25.93 301.60 Z" fill="#f9f2d4" stroke="#faf7f2" stroke-width="1.2" data-f="Love/Caring" style="cursor:pointer"/>
+      <text x="-12.99" y="299.01" transform="rotate(352.06 -12.99 299.01)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Love/Caring" style="cursor:pointer">Caring</text>
+      <path d="M -51.94 292.88 A 248 248 0 0 1 -53.00 270.00 L 23.00 270.00 A 172 172 0 0 0 23.73 285.87 Z" fill="#f9f2d4" stroke="#faf7f2" stroke-width="1.2" data-f="Love/Compassionate" style="cursor:pointer"/>
+      <text x="-14.78" y="279.70" transform="rotate(357.35 -14.78 279.70)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Love/Compassionate" style="cursor:pointer">Compassionate</text>
+      <text x="55.60" y="282.92" transform="rotate(354.71 55.60 282.92)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Tenderness</text>
+      <path d="M 23.00 270.00 A 172 172 0 0 1 25.93 238.40 L 88.84 250.16 A 108 108 0 0 0 87.00 270.00 Z" fill="#f1e4a4" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M -53.00 270.00 A 248 248 0 0 1 -51.94 247.12 L 23.73 254.13 A 172 172 0 0 0 23.00 270.00 Z" fill="#f9f2d4" stroke="#faf7f2" stroke-width="1.2" data-f="Love/Relieved" style="cursor:pointer"/>
+      <text x="-14.78" y="260.30" transform="rotate(362.65 -14.78 260.30)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Love/Relieved" style="cursor:pointer">Relieved</text>
+      <path d="M -51.94 247.12 A 248 248 0 0 1 -48.78 224.43 L 25.93 238.40 A 172 172 0 0 0 23.73 254.13 Z" fill="#f9f2d4" stroke="#faf7f2" stroke-width="1.2" data-f="Love/Satisfied" style="cursor:pointer"/>
+      <text x="-12.99" y="240.99" transform="rotate(367.94 -12.99 240.99)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Love/Satisfied" style="cursor:pointer">Satisfied</text>
+      <text x="55.60" y="257.08" transform="rotate(365.29 55.60 257.08)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Peaceful</text>
+      <text x="119.02" y="291.62" transform="rotate(344.12 119.02 291.62)" text-anchor="middle" dominant-baseline="middle" font-size="14.5" fill="#3a3244" font-family="Instrument Serif, Georgia, serif" font-style="italic">Love</text>
+      <path d="M 88.84 250.16 A 108 108 0 0 1 146.86 173.32 L 172.71 225.24 A 50 50 0 0 0 145.85 260.81 Z" fill="#ec9b85" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 25.93 238.40 A 172 172 0 0 1 34.61 207.87 L 94.29 230.99 A 108 108 0 0 0 88.84 250.16 Z" fill="#f3bcac" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M -48.78 224.43 A 248 248 0 0 1 -43.53 202.13 L 29.57 222.93 A 172 172 0 0 0 25.93 238.40 Z" fill="#fadfd7" stroke="#faf7f2" stroke-width="1.2" data-f="Fear/Frightened" style="cursor:pointer"/>
+      <text x="-9.42" y="221.92" transform="rotate(373.24 -9.42 221.92)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Fear/Frightened" style="cursor:pointer">Frightened</text>
+      <path d="M -43.53 202.13 A 248 248 0 0 1 -36.25 180.41 L 34.61 207.87 A 172 172 0 0 0 29.57 222.93 Z" fill="#fadfd7" stroke="#faf7f2" stroke-width="1.2" data-f="Fear/Helpless" style="cursor:pointer"/>
+      <text x="-4.11" y="203.26" transform="rotate(378.53 -4.11 203.26)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Fear/Helpless" style="cursor:pointer">Helpless</text>
+      <text x="60.34" y="231.69" transform="rotate(375.88 60.34 231.69)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Scared</text>
+      <path d="M 34.61 207.87 A 172 172 0 0 1 48.76 179.45 L 103.18 213.15 A 108 108 0 0 0 94.29 230.99 Z" fill="#f3bcac" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M -36.25 180.41 A 248 248 0 0 1 -27.00 159.46 L 41.03 193.33 A 172 172 0 0 0 34.61 207.87 Z" fill="#fadfd7" stroke="#faf7f2" stroke-width="1.2" data-f="Fear/Panic" style="cursor:pointer"/>
+      <text x="2.89" y="185.18" transform="rotate(383.82 2.89 185.18)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Fear/Panic" style="cursor:pointer">Panic</text>
+      <path d="M -27.00 159.46 A 248 248 0 0 1 -15.85 139.44 L 48.76 179.45 A 172 172 0 0 0 41.03 193.33 Z" fill="#fadfd7" stroke="#faf7f2" stroke-width="1.2" data-f="Fear/Hysterical" style="cursor:pointer"/>
+      <text x="11.54" y="167.81" transform="rotate(389.12 11.54 167.81)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Fear/Hysterical" style="cursor:pointer">Hysterical</text>
+      <text x="69.68" y="207.60" transform="rotate(386.47 69.68 207.60)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Terror</text>
+      <path d="M 48.76 179.45 A 172 172 0 0 1 67.89 154.12 L 115.19 197.24 A 108 108 0 0 0 103.18 213.15 Z" fill="#f3bcac" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M -15.85 139.44 A 248 248 0 0 1 -2.91 120.55 L 57.74 166.35 A 172 172 0 0 0 48.76 179.45 Z" fill="#fadfd7" stroke="#faf7f2" stroke-width="1.2" data-f="Fear/Inferior" style="cursor:pointer"/>
+      <text x="21.75" y="151.32" transform="rotate(394.41 21.75 151.32)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Fear/Inferior" style="cursor:pointer">Inferior</text>
+      <path d="M -2.91 120.55 A 248 248 0 0 1 11.73 102.92 L 67.89 154.12 A 172 172 0 0 0 57.74 166.35 Z" fill="#fadfd7" stroke="#faf7f2" stroke-width="1.2" data-f="Fear/Inadequate" style="cursor:pointer"/>
+      <text x="33.44" y="135.84" transform="rotate(399.71 33.44 135.84)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Fear/Inadequate" style="cursor:pointer">Inadequate</text>
+      <text x="83.28" y="185.63" transform="rotate(397.06 83.28 185.63)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Insecure</text>
+      <path d="M 67.89 154.12 A 172 172 0 0 1 91.35 132.74 L 129.92 183.81 A 108 108 0 0 0 115.19 197.24 Z" fill="#f3bcac" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 11.73 102.92 A 248 248 0 0 1 27.92 86.73 L 79.12 142.89 A 172 172 0 0 0 67.89 154.12 Z" fill="#fadfd7" stroke="#faf7f2" stroke-width="1.2" data-f="Fear/Worried" style="cursor:pointer"/>
+      <text x="46.51" y="121.51" transform="rotate(405.00 46.51 121.51)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Fear/Worried" style="cursor:pointer">Worried</text>
+      <path d="M 27.92 86.73 A 248 248 0 0 1 45.55 72.09 L 91.35 132.74 A 172 172 0 0 0 79.12 142.89 Z" fill="#fadfd7" stroke="#faf7f2" stroke-width="1.2" data-f="Fear/Anxious" style="cursor:pointer"/>
+      <text x="60.84" y="108.44" transform="rotate(410.29 60.84 108.44)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Fear/Anxious" style="cursor:pointer">Anxious</text>
+      <text x="100.68" y="166.54" transform="rotate(407.65 100.68 166.54)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Nervous</text>
+      <path d="M 91.35 132.74 A 172 172 0 0 1 118.33 116.03 L 146.86 173.32 A 108 108 0 0 0 129.92 183.81 Z" fill="#f3bcac" stroke="#faf7f2" stroke-width="1.2"/>
+      <path d="M 45.55 72.09 A 248 248 0 0 1 64.44 59.15 L 104.45 123.76 A 172 172 0 0 0 91.35 132.74 Z" fill="#fadfd7" stroke="#faf7f2" stroke-width="1.2" data-f="Fear/Mortified" style="cursor:pointer"/>
+      <text x="76.32" y="96.75" transform="rotate(415.59 76.32 96.75)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Fear/Mortified" style="cursor:pointer">Mortified</text>
+      <path d="M 64.44 59.15 A 248 248 0 0 1 84.46 48.00 L 118.33 116.03 A 172 172 0 0 0 104.45 123.76 Z" fill="#fadfd7" stroke="#faf7f2" stroke-width="1.2" data-f="Fear/Dread" style="cursor:pointer"/>
+      <text x="92.81" y="86.54" transform="rotate(420.88 92.81 86.54)" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="#3f3749" data-f="Fear/Dread" style="cursor:pointer">Dread</text>
+      <text x="121.30" y="150.97" transform="rotate(418.24 121.30 150.97)" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="#4c4356" >Horror</text>
+      <text x="131.96" y="222.39" transform="rotate(397.06 131.96 222.39)" text-anchor="middle" dominant-baseline="middle" font-size="14.5" fill="#3a3244" font-family="Instrument Serif, Georgia, serif" font-style="italic">Fear</text>
+      <path d="{{selPath}}" fill="none" stroke="#3a3244" stroke-width="2.5"/>
+    </g>
+    <circle cx="195" cy="270" r="50" fill="#fffdf9" stroke="rgba(58,50,68,0.12)" stroke-width="1"/>
+    <text x="195" y="266" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="19" fill="#3a3244">{{focusName}}</text>
+    <text x="195" y="287" text-anchor="middle" font-size="9.5" letter-spacing="1.5" fill="#9a8fa6">SPIN ME</text>
+    <polygon points="186,6 204,6 195,22" fill="#3a3244"/>
+  </svg>
+  <div style="padding: 12px 24px 0 24px; display: flex; align-items: baseline; gap: 8px">
+    <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 19px">{{focusName}}</span>
+    <span style="font-size: 12px; color: #9a8fa6">{{focusSub}}</span>
+  </div>
+  <div style="flex: 1 1 0; overflow-y: auto; padding: 10px 24px 8px 24px; display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start">
+    <sc-for list="{{chips}}" as="c" hint-placeholder-count="10">
+      <div onClick="{{c.pick}}" style="padding: 12px 16px; border-radius: 999px; font-size: 14px; cursor: pointer; {{c.st}}">{{c.name}}</div>
+    </sc-for>
+  </div>
+  <div style="padding: 12px 24px 28px 24px">
+    <div style="background: #332c3e; color: #faf7f2; border-radius: 18px; height: 58px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; font-size: 16px; font-weight: 600; cursor: pointer">
+      <span>What&#39;s beneath {{selName}}?</span>
+      <svg width="20" height="20" viewBox="0 0 20 20"><path d="M4 10 H16 M11 4.5 L16.5 10 L11 15.5" fill="none" stroke="#faf7f2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+const W = {"cores":[{"name":"Anger","start":-116.47058823529412,"end":-63.529411764705884,"cols":["#df86dd","#ecaeea","#f6d7f5"],"outers":[{"key":"Anger/Hate","name":"Hate","mid":"Rage","a0":-116.471,"a1":-111.176},{"key":"Anger/Hostile","name":"Hostile","mid":"Rage","a0":-111.176,"a1":-105.882},{"key":"Anger/Agitated","name":"Agitated","mid":"Exasperated","a0":-105.882,"a1":-100.588},{"key":"Anger/Frustrated","name":"Frustrated","mid":"Exasperated","a0":-100.588,"a1":-95.294},{"key":"Anger/Annoyed","name":"Annoyed","mid":"Irritable","a0":-95.294,"a1":-90},{"key":"Anger/Aggravated","name":"Aggravated","mid":"Irritable","a0":-90,"a1":-84.706},{"key":"Anger/Resentful","name":"Resentful","mid":"Envy","a0":-84.706,"a1":-79.412},{"key":"Anger/Jealous","name":"Jealous","mid":"Envy","a0":-79.412,"a1":-74.118},{"key":"Anger/Contempt","name":"Contempt","mid":"Disgust","a0":-74.118,"a1":-68.824},{"key":"Anger/Revolted","name":"Revolted","mid":"Disgust","a0":-68.824,"a1":-63.529}]},{"name":"Sadness","start":-63.529411764705884,"end":0,"cols":["#9fa9e6","#bfc6ef","#e0e3f8"],"outers":[{"key":"Sadness/Agony","name":"Agony","mid":"Suffering","a0":-63.529,"a1":-58.235},{"key":"Sadness/Hurt","name":"Hurt","mid":"Suffering","a0":-58.235,"a1":-52.941},{"key":"Sadness/Depressed","name":"Depressed","mid":"Sadness","a0":-52.941,"a1":-47.647},{"key":"Sadness/Sorrow","name":"Sorrow","mid":"Sadness","a0":-47.647,"a1":-42.353},{"key":"Sadness/Dismayed","name":"Dismayed","mid":"Disappointed","a0":-42.353,"a1":-37.059},{"key":"Sadness/Displeased","name":"Displeased","mid":"Disappointed","a0":-37.059,"a1":-31.765},{"key":"Sadness/Regretful","name":"Regretful","mid":"Shameful","a0":-31.765,"a1":-26.471},{"key":"Sadness/Guilty","name":"Guilty","mid":"Shameful","a0":-26.471,"a1":-21.176},{"key":"Sadness/Isolated","name":"Isolated","mid":"Neglected","a0":-21.176,"a1":-15.882},{"key":"Sadness/Lonely","name":"Lonely","mid":"Neglected","a0":-15.882,"a1":-10.588},{"key":"Sadness/Grief","name":"Grief","mid":"Despair","a0":-10.588,"a1":-5.294},{"key":"Sadness/Powerless","name":"Powerless","mid":"Despair","a0":-5.294,"a1":0}]},{"name":"Surprise","start":0,"end":52.94117647058823,"cols":["#7fdcc0","#a8e8d4","#d6f4ea"],"outers":[{"key":"Surprise/Shocked","name":"Shocked","mid":"Stunned","a0":0,"a1":5.294},{"key":"Surprise/Dismayed","name":"Dismayed","mid":"Stunned","a0":5.294,"a1":10.588},{"key":"Surprise/Disillusioned","name":"Disillusioned","mid":"Confused","a0":10.588,"a1":15.882},{"key":"Surprise/Perplexed","name":"Perplexed","mid":"Confused","a0":15.882,"a1":21.176},{"key":"Surprise/Astonished","name":"Astonished","mid":"Amazed","a0":21.176,"a1":26.471},{"key":"Surprise/Awe-struck","name":"Awe-struck","mid":"Amazed","a0":26.471,"a1":31.765},{"key":"Surprise/Speechless","name":"Speechless","mid":"Overcome","a0":31.765,"a1":37.059},{"key":"Surprise/Astounded","name":"Astounded","mid":"Overcome","a0":37.059,"a1":42.353},{"key":"Surprise/Stimulated","name":"Stimulated","mid":"Moved","a0":42.353,"a1":47.647},{"key":"Surprise/Touched","name":"Touched","mid":"Moved","a0":47.647,"a1":52.941}]},{"name":"Joy","start":52.94117647058823,"end":137.6470588235294,"cols":["#a8d97a","#c6e6a2","#e4f3d2"],"outers":[{"key":"Joy/Pleased","name":"Pleased","mid":"Content","a0":52.941,"a1":58.235},{"key":"Joy/Satisfied","name":"Satisfied","mid":"Content","a0":58.235,"a1":63.529},{"key":"Joy/Amused","name":"Amused","mid":"Happy","a0":63.529,"a1":68.824},{"key":"Joy/Delighted","name":"Delighted","mid":"Happy","a0":68.824,"a1":74.118},{"key":"Joy/Jovial","name":"Jovial","mid":"Cheerful","a0":74.118,"a1":79.412},{"key":"Joy/Blissful","name":"Blissful","mid":"Cheerful","a0":79.412,"a1":84.706},{"key":"Joy/Triumphant","name":"Triumphant","mid":"Proud","a0":84.706,"a1":90},{"key":"Joy/Illustrious","name":"Illustrious","mid":"Proud","a0":90,"a1":95.294},{"key":"Joy/Eager","name":"Eager","mid":"Optimistic","a0":95.294,"a1":100.588},{"key":"Joy/Hopeful","name":"Hopeful","mid":"Optimistic","a0":100.588,"a1":105.882},{"key":"Joy/Excited","name":"Excited","mid":"Enthusiastic","a0":105.882,"a1":111.176},{"key":"Joy/Zeal","name":"Zeal","mid":"Enthusiastic","a0":111.176,"a1":116.471},{"key":"Joy/Euphoric","name":"Euphoric","mid":"Elation","a0":116.471,"a1":121.765},{"key":"Joy/Jubilation","name":"Jubilation","mid":"Elation","a0":121.765,"a1":127.059},{"key":"Joy/Enchanted","name":"Enchanted","mid":"Enthralled","a0":127.059,"a1":132.353},{"key":"Joy/Rapture","name":"Rapture","mid":"Enthralled","a0":132.353,"a1":137.647}]},{"name":"Love","start":137.6470588235294,"end":190.58823529411762,"cols":["#e9d377","#f1e4a4","#f9f2d4"],"outers":[{"key":"Love/Romantic","name":"Romantic","mid":"Affectionate","a0":137.647,"a1":142.941},{"key":"Love/Fondness","name":"Fondness","mid":"Affectionate","a0":142.941,"a1":148.235},{"key":"Love/Sentimental","name":"Sentimental","mid":"Longing","a0":148.235,"a1":153.529},{"key":"Love/Attracted","name":"Attracted","mid":"Longing","a0":153.529,"a1":158.824},{"key":"Love/Passion","name":"Passion","mid":"Desire","a0":158.824,"a1":164.118},{"key":"Love/Infatuation","name":"Infatuation","mid":"Desire","a0":164.118,"a1":169.412},{"key":"Love/Caring","name":"Caring","mid":"Tenderness","a0":169.412,"a1":174.706},{"key":"Love/Compassionate","name":"Compassionate","mid":"Tenderness","a0":174.706,"a1":180},{"key":"Love/Relieved","name":"Relieved","mid":"Peaceful","a0":180,"a1":185.294},{"key":"Love/Satisfied","name":"Satisfied","mid":"Peaceful","a0":185.294,"a1":190.588}]},{"name":"Fear","start":190.58823529411762,"end":243.52941176470586,"cols":["#ec9b85","#f3bcac","#fadfd7"],"outers":[{"key":"Fear/Frightened","name":"Frightened","mid":"Scared","a0":190.588,"a1":195.882},{"key":"Fear/Helpless","name":"Helpless","mid":"Scared","a0":195.882,"a1":201.176},{"key":"Fear/Panic","name":"Panic","mid":"Terror","a0":201.176,"a1":206.471},{"key":"Fear/Hysterical","name":"Hysterical","mid":"Terror","a0":206.471,"a1":211.765},{"key":"Fear/Inferior","name":"Inferior","mid":"Insecure","a0":211.765,"a1":217.059},{"key":"Fear/Inadequate","name":"Inadequate","mid":"Insecure","a0":217.059,"a1":222.353},{"key":"Fear/Worried","name":"Worried","mid":"Nervous","a0":222.353,"a1":227.647},{"key":"Fear/Anxious","name":"Anxious","mid":"Nervous","a0":227.647,"a1":232.941},{"key":"Fear/Mortified","name":"Mortified","mid":"Horror","a0":232.941,"a1":238.235},{"key":"Fear/Dread","name":"Dread","mid":"Horror","a0":238.235,"a1":243.529}]}]};
+
+class Component extends DCLogic {
+  cur() { return this.state || {}; }
+  rotNow() { const s = this.cur(); return typeof s.rot === 'number' ? s.rot : 0; }
+  focusCore() {
+    let a = (-90 - this.rotNow()) % 360; a = (a + 360) % 360;
+    for (const c of W.cores) {
+      const s = ((c.start % 360) + 360) % 360;
+      let aa = a; if (aa < s) aa += 360;
+      if (aa >= s && aa < s + (c.end - c.start)) return c;
+    }
+    return W.cores[0];
+  }
+  wedgePath(a0, a1, r0, r1) {
+    const RAD = Math.PI / 180;
+    const px = (r, a) => (195 + r * Math.cos(a * RAD)).toFixed(2) + ' ' + (270 + r * Math.sin(a * RAD)).toFixed(2);
+    return 'M ' + px(r1, a0) + ' A ' + r1 + ' ' + r1 + ' 0 0 1 ' + px(r1, a1) +
+      ' L ' + px(r0, a1) + ' A ' + r0 + ' ' + r0 + ' 0 0 0 ' + px(r0, a0) + ' Z';
+  }
+  angleAt(e) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const cx = rect.left + rect.width * (195 / 390);
+    const cy = rect.top + rect.height * (270 / 396);
+    return Math.atan2(e.clientY - cy, e.clientX - cx) * 180 / Math.PI;
+  }
+  renderVals() {
+    const self = this;
+    const s = this.cur();
+    const pick = s.pick === undefined ? 'Anger/Frustrated' : s.pick;
+    const fc = this.focusCore();
+    let selPath = '', selName = pick.split('/')[1];
+    for (const c of W.cores) for (const o of c.outers) {
+      if (o.key === pick) selPath = this.wedgePath(o.a0, o.a1, 172, 248);
+    }
+    return {
+      gt: 'rotate(' + this.rotNow().toFixed(2) + ' 195 270)',
+      selPath: selPath,
+      selName: selName,
+      focusName: fc.name,
+      focusSub: fc.outers.length + ' outer feelings — tap one',
+      chips: fc.outers.map(function (o) {
+        const sel = o.key === pick;
+        return {
+          name: o.name,
+          st: sel
+            ? 'background:' + fc.cols[1] + ';border:1.5px solid #3a3244;color:#3a3244;font-weight:600'
+            : 'background:#fffdf9;border:1.5px solid #e9e1d5;color:#54495f',
+          pick: function () { self.setState({ pick: o.key }); }
+        };
+      }),
+      down: function (e) {
+        self._drag = true; self._mv = 0; self._la = self.angleAt(e);
+        if (e.currentTarget.setPointerCapture && e.pointerId !== undefined) {
+          try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {}
+        }
+      },
+      move: function (e) {
+        if (!self._drag) return;
+        const a = self.angleAt(e);
+        let d = a - self._la;
+        if (d > 180) d -= 360; if (d < -180) d += 360;
+        self._la = a; self._mv = (self._mv || 0) + Math.abs(d);
+        self.setState({ rot: self.rotNow() + d });
+      },
+      up: function () { self._drag = false; },
+      tap: function (e) {
+        if ((self._mv || 0) > 2) return;
+        let t = e.target;
+        for (let i = 0; i < 6 && t && t.getAttribute; i++) {
+          const k = t.getAttribute('data-f');
+          if (k) { self.setState({ pick: k }); return; }
+          t = t.parentNode;
+        }
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

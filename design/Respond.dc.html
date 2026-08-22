@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap">
+  <style>
+    body { margin: 0; background: #faf7f2; font-family: 'Instrument Sans', system-ui, sans-serif; color: #3a3244; }
+    a { color: #8a5fb0; } a:hover { color: #6d4691; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #faf7f2; display: flex; flex-direction: column; overflow: hidden">
+  <div style="flex: 1 1 0; overflow-y: auto; padding: 56px 24px 24px 24px">
+    <div style="display: flex; align-items: center; gap: 6px; color: #6d6178; font-size: 14px; cursor: pointer; min-height: 44px">
+      <svg width="20" height="20" viewBox="0 0 20 20"><path d="M12.5 4 L7 10 L12.5 16" fill="none" stroke="#3a3244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Needs</span>
+    </div>
+    <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; margin-top: 6px">Respond with care</div>
+    <div style="display: flex; gap: 8px; margin-top: 10px">
+      <div style="background: #f6d7f5; color: #7c3a79; border-radius: 999px; padding: 6px 12px; font-size: 12px; font-weight: 600">Feeling &middot; Frustrated</div>
+      <div style="background: #e4f3d2; color: #4c6b2d; border-radius: 999px; padding: 6px 12px; font-size: 12px; font-weight: 600">Need &middot; Effectiveness</div>
+    </div>
+    <div style="display: flex; background: #efe9df; border-radius: 999px; padding: 4px; margin-top: 18px">
+      <sc-for list="{{tabs}}" as="t" hint-placeholder-count="2">
+        <div onClick="{{t.pick}}" style="flex: 1 1 0; text-align: center; padding: 11px 0; border-radius: 999px; font-size: 13.5px; cursor: pointer; {{t.st}}">{{t.label}}</div>
+      </sc-for>
+    </div>
+    <div style="background: #fffdf9; border: 1px solid #e9e1d5; border-radius: 18px; padding: 18px 20px; margin-top: 16px; font-family: 'Instrument Serif', Georgia, serif; font-size: 19px; line-height: 1.55">
+      <sc-if value="{{isOut}}" hint-placeholder-val="{{ true }}">
+        <span>When </span><span style="color: #8a7f96; border-bottom: 2px dashed #c9bfd6">[what happened]</span><span>, I feel </span><span style="color: #a94ea7; font-style: italic">frustrated</span><span> because I need </span><span style="color: #5d8a3c; font-style: italic">effectiveness</span><span>. Would you be willing to </span><span style="color: #8a7f96; border-bottom: 2px dashed #c9bfd6">[one doable action]</span><span>?</span>
+      </sc-if>
+      <sc-if value="{{isSelf}}" hint-placeholder-val="{{ false }}">
+        <span>Something happened. I feel </span><span style="color: #a94ea7; font-style: italic">frustrated</span><span> because </span><span style="color: #5d8a3c; font-style: italic">effectiveness</span><span> matters to me. What would help right now?</span>
+      </sc-if>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px">
+      <sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+        <div style="display: flex; gap: 14px; background: #fffdf9; border: 1px solid #e9e1d5; border-radius: 18px; padding: 15px 16px">
+          <div style="width: 28px; height: 28px; flex: 0 0 auto; border: 1.5px solid #3a3244; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', Georgia, serif; font-size: 15px">{{s.num}}</div>
+          <div>
+            <div style="font-size: 15px; font-weight: 600">{{s.title}}</div>
+            <div style="font-size: 13px; line-height: 1.45; color: #54495f; margin-top: 3px">{{s.body}}</div>
+            <div style="font-size: 12px; line-height: 1.45; font-style: italic; color: #8a7f96; margin-top: 6px">{{s.tip}}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="font-size: 11px; color: #9a8fa6; text-align: center; margin-top: 18px">Framework: Marshall Rosenberg, Nonviolent Communication</div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+const STEPS = {
+  out: [
+    { title: 'Observe', body: 'Describe what happened like a camera would record it — no verdicts.', tip: '"You always ignore my messages" is a judgment. "I sent three messages this week" is an observation.' },
+    { title: 'Feel', body: 'Name the emotion itself, and own it as yours.', tip: '"I feel ignored" points a finger. "I feel frustrated" names a feeling.' },
+    { title: 'Need', body: 'Link the feeling to your need — not to their behavior.', tip: 'Needs are universal; strategies for meeting them are negotiable.' },
+    { title: 'Request', body: 'Ask for one concrete, doable action — and mean it as a request.', tip: 'A request survives hearing "no". A demand does not.' }
+  ],
+  self: [
+    { title: 'Pause', body: 'One slow breath before any words. The gap is where choice lives.', tip: 'Nothing needs to be said in this minute.' },
+    { title: 'Name', body: 'Silently say: "I notice frustration is here."', tip: 'Naming an emotion loosens its grip.' },
+    { title: 'Connect', body: 'Ask: which need of mine is calling for attention?', tip: 'Frustration often guards effectiveness, progress or clarity.' },
+    { title: 'Choose', body: 'Decide your next step from the need — not from the trigger.', tip: 'What would meet the need for effectiveness, even a little?' }
+  ]
+};
+
+class Component extends DCLogic {
+  tabNow() {
+    const s = this.state || {};
+    return s.tab === undefined ? 'out' : s.tab;
+  }
+  renderVals() {
+    const self = this;
+    const tab = this.tabNow();
+    const defs = [
+      { id: 'out', label: 'Say it to them' },
+      { id: 'self', label: 'Self-empathy' }
+    ];
+    return {
+      isOut: tab === 'out',
+      isSelf: tab === 'self',
+      tabs: defs.map(function (t) {
+        const on = t.id === tab;
+        return {
+          label: t.label,
+          st: on ? 'background:#fffdf9;font-weight:600;box-shadow:0 1px 4px rgba(58,50,68,0.12)' : 'color:#6d6178',
+          pick: function () { self.setState({ tab: t.id }); }
+        };
+      }),
+      steps: STEPS[tab].map(function (s, i) {
+        return { num: String(i + 1), title: s.title, body: s.body, tip: s.tip };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
